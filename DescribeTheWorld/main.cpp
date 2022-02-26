@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <map>
+#include <fstream>
 
 Person* FindOldest(vector<Person*> humans)
 {
@@ -29,9 +30,54 @@ Person* FindOldest(vector<Person*> humans)
 	return oldest;
 }
 
+//void LoadData(string filename)
+//{
+//	ifstream myfile(filename);
+//	string mystring;
+//	if (myfile.is_open())
+//	{
+//		string mychar;
+//		while (myfile)
+//		{
+//			mychar = myfile.get();
+//			cout << mychar;
+//		}
+//	}
+//}
+
+void LoadData(vector<string>& v) 
+{
+	ifstream myfile("data.txt");
+	string line;
+	while (getline(myfile, line)) 
+	{
+		v.push_back(line);
+	}
+	myfile.close();
+}
+
+vector<string> GetLineData(string& line)
+{
+	string word;
+	vector<string> temp;
+	for (int i = 0; i < line.size(); i++)
+	{
+		if (line[i] != ',')
+		{
+			word = word + line[i];
+		}
+		else
+		{
+			temp.push_back(word);
+			word.clear();
+		}
+	}
+	return temp;
+}
+
 int main()
 {
-	Student* student1 = new Student;
+	/*Student* student1 = new Student;
 	student1->SetName("Viktoria");
 	student1->SetAge(21);
 	student1->SetUniname("Sofia University");
@@ -62,7 +108,43 @@ int main()
 	{
 		cout << students.at(i)->GetName() << endl;
 		cout << students.at(i)->GetSpec() << endl;
+	}*/
+
+	/*string filename = "data.txt";
+	LoadData(filename);*/
+	
+	vector<string> students;
+	LoadData(students);
+	for (int i = 0; i < students.size(); ++i)
+	{
+		/*cout << students[i] << " ";
+		cout << endl;*/
 	}
+
+	vector<Student*> person;
+	vector<string> data;
+	for (int i = 0; i < students.size(); i++)
+	{
+		data = GetLineData(students[i]);
+		Student* first = new Student;
+		first->SetName(data[0]);
+		first->SetAge(stoi(data[1]));
+		first->SetSex(data[2]);
+		first->SetBirth(stoi(data[3]));
+		first->SetId(stoi(data[4]));
+		first->SetHeight(stoi(data[5]));
+		first->SetEyecolor(data[6]);
+		first->SetZodiacsign(data[7]);
+		first->SetUniname(data[8]);
+		first->SetSpec(data[9]);
+		person.push_back(first);
+	}
+	for (int i = 0; i < person.size(); i++)
+	{
+		person.at(i)->Print();
+	}
+	
+	
 
 	return 0;
 }

@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Cafe.cpp" />
+    <ClCompile Include="Car.cpp" />
     <ClCompile Include="Computer.cpp" />
     <ClCompile Include="Library.cpp" />
     <ClCompile Include="main.cpp" />
@@ -147,16 +148,19 @@
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="University.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
     <ClInclude Include="Cafe.h" />
+    <ClInclude Include="Car.h" />
     <ClInclude Include="Computer.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="University.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

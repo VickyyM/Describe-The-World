@@ -1,0 +1,5 @@
+Tsvetelin,22,male,1999,0,172,green,taurus,Sofia Univeristy,Applied Mathematics,
+Teodor,22,male,1999,1,177,brown,Pisces,Sofia Univeristy,Applied Mathematics,
+Viktoria,21,female,2000,2,174,brown,Scorpio,Sofia Univeristy,Software Engineering,
+Ivan,23,male,1998,3,180,blue,Gemini,Technical Univeristy,Machine Engineering,
+Maria,19,female,2002,4,162,blue,Gemini,UNWE,Economics,
